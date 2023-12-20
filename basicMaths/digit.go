@@ -155,6 +155,18 @@ func Find_GCD_HCF(a int, b int) int {
 	return gcd
 }
 
-func GCD_Euclidean(a, b int ){
+func GCD_Euclidean(a, b int) int {
+	for a != 0 && b != 0 {
+		if a > b {
+			a = a % b
+		} else {
+			b = b % a
+		}
+	}
 
+	if a == 0 {
+		return b
+	} else {
+		return a
+	}
 }
